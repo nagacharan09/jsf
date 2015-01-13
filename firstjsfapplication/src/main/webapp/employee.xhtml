@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 
+Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+	<h:form>
+
+		<h:panelGrid columns="3">
+			<h:outputText value="Employee Id:" />
+			<h:inputText id="id" value="#{employee.id}" required="true"
+				label="Employee Id">
+				<f:validateRequired />
+				<f:validateLength minimum="1" maximum="3" />
+				<f:validateRegex pattern="[0-9]*" />
+			</h:inputText>
+			<h:message for="id" style="color:red" />
+		</h:panelGrid>
+		<br />
+		<h:panelGrid columns="3">
+			<h:outputText value="Employee Name:" />
+			<h:inputText id="name" value="#{employee.name}" required="true"
+				label="Employee Name">
+				<f:validateRequired />
+				<f:validateLength minimum="6" maximum="15" />
+				<f:validateRegex pattern="[a-zA-Z0-9\s]*" />
+			</h:inputText>
+			<h:message for="name" style="color:red" />
+		</h:panelGrid>
+		<br />
+		<h:panelGrid columns="3">
+			<h:outputText value="Employee Department:" />
+			<h:selectOneMenu value="#{employee.department}" id="department"
+				required="true" label="Employee Department">
+				<f:selectItem itemValue="" itemLabel="Please Select Department" />
+				<f:selectItem itemValue="Sales" itemLabel="Sales" />
+				<f:selectItem itemValue="Finance" itemLabel="Finance" />
+			</h:selectOneMenu>
+			<h:message for="department" style="color:red" />
+		</h:panelGrid>
+		<br />
+
+		<h:panelGrid columns="3">
+			<h:outputText value="Employee age:" />
+			<h:inputText value="#{employee.age}" id="age" required="true"
+				label="Employee Age">
+				<f:validateRequired />
+				<f:validateLongRange minimum="1" maximum="120" />
+			</h:inputText>
+			<h:message for="age" style="color:red" />
+		</h:panelGrid>
+		<br />
+		<h:panelGrid columns="3">
+			<h:outputText value="Employee Salary:" />
+			<h:inputText value="#{employee.salary}" id="salary" required="true"
+				label="Employee Salary">
+				<f:validateRequired />
+				<f:validateDoubleRange minimum="1.00" maximum="99999999999.50" />
+			</h:inputText>
+			<h:message for="salary" style="color:red" />
+		</h:panelGrid>
+		<br />
+		<h:panelGrid columns="3">
+			<h:outputText value="Enter your email :" />
+
+			<h:inputText id="email" value="#{employee.email}" size="20"
+				label="Email Address" required="true">
+				<f:validateRequired />
+				<f:validator validatorId="com.pkrm.first.EmailValidator" />
+			</h:inputText>
+
+			<h:message for="email" style="color:red" />
+		</h:panelGrid>
+		<br />
+
+		<h:commandButton value="Save" type="submit"
+			action="#{employee.submit}" />
+
+	</h:form>
+</h:body>
+</html>
