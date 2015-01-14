@@ -1,4 +1,4 @@
-package com.pkrm.first;
+package com.lnc.first;
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name = "firstJsf", eager = true)

@@ -1,4 +1,4 @@
-package com.pkrm.first;
+package com.lnc.first;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

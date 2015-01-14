@@ -1,4 +1,4 @@
-package com.pkrm.first;
+package com.lnc.first;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,7 +7,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.view.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.event.PhaseId;
 
 @ManagedBean(name = "employee")
 public class Employee implements Serializable {
@@ -21,7 +22,6 @@ public class Employee implements Serializable {
 	private String email;
 
 	public Employee() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Employee(String name, String department, int age, double salary) {
